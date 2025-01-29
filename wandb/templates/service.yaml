@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "wandb.fullname" . }}
+  labels:
+    app.kubernetes.io/name: {{ include "wandb.name" . }}
+    helm.sh/chart: {{ include "wandb.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: Helm
+spec:
+  type: {{ .Values.service.type }}
+  selector:
+    app: {{ include "wandb.name" . }}
+  ports:
+    - name: http
+      port: {{ .Values.service.port }}
+      targetPort: 8080

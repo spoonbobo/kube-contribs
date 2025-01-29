@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "wandb.fullname" . }}
+  labels:
+    app.kubernetes.io/name: {{ include "wandb.name" . }}
+    helm.sh/chart: {{ include "wandb.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: Helm
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ include "wandb.name" . }}
+  template:
+    metadata:
+      labels:
+        app: {{ include "wandb.name" . }}
+    spec:
+      containers:
+        - name: wandb
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: WANDB_API_KEY
+              value: {{ .Values.env.WANDB_API_KEY | quote }}
+            - name: WANDB_NAME
+              value: {{ .Values.env.WANDB_NAME | quote }}
+          ports:
+            - containerPort: 8080
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          volumeMounts:
+            - name: wandb-pv
+              mountPath: /vol
+      volumes:
+        - name: wandb-pv
+          persistentVolumeClaim:
+            claimName: {{ include "wandb.fullname" . }}
