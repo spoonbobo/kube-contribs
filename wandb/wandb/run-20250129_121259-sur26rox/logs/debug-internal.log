@@ -1,0 +1,17 @@
+{"time":"2025-01-29T12:12:59.535421094+08:00","level":"INFO","msg":"stream: starting","core version":"0.19.5","symlink path":"/home/spoonbobo/kube-contribs/wandb/wandb/run-20250129_121259-sur26rox/logs/debug-core.log"}
+{"time":"2025-01-29T12:12:59.63836887+08:00","level":"INFO","msg":"created new stream","id":"sur26rox"}
+{"time":"2025-01-29T12:12:59.638390601+08:00","level":"INFO","msg":"stream: started","id":"sur26rox"}
+{"time":"2025-01-29T12:12:59.638409136+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"sur26rox"}
+{"time":"2025-01-29T12:12:59.638425878+08:00","level":"INFO","msg":"sender: started","stream_id":"sur26rox"}
+{"time":"2025-01-29T12:12:59.638435937+08:00","level":"INFO","msg":"handler: started","stream_id":"sur26rox"}
+{"time":"2025-01-29T12:12:59.654580065+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-01-29T12:12:59.654740679+08:00","level":"ERROR","msg":"git repo not found","error":"repository does not exist"}
+{"time":"2025-01-29T12:12:59.776305415+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-01-29T12:12:59.776671898+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-01-29T12:12:59.940859022+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-01-29T12:12:59.946436078+08:00","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2025-01-29T12:13:00.949235111+08:00","level":"INFO","msg":"stream: closing","id":"sur26rox"}
+{"time":"2025-01-29T12:13:00.949250781+08:00","level":"INFO","msg":"handler: closed","stream_id":"sur26rox"}
+{"time":"2025-01-29T12:13:00.949257143+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"sur26rox"}
+{"time":"2025-01-29T12:13:00.949269586+08:00","level":"INFO","msg":"sender: closed","stream_id":"sur26rox"}
+{"time":"2025-01-29T12:13:00.94930314+08:00","level":"INFO","msg":"stream: closed","id":"sur26rox"}
