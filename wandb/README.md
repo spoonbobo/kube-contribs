@@ -2,6 +2,11 @@
 
 ## Setup
 
+### Create a new namespace
+```bash
+kubectl create namespace wandb
+```
+
 ### install helm chart
 ```bash
 helm install local-wandb .  -n wandb
