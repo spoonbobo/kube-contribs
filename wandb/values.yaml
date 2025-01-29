@@ -25,12 +25,14 @@ serviceAccount:
   name: "wandb-sa"
 
 ingress:
-  enabled: false
-  annotations: {}
+  enabled: true
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
   hosts:
-    - host: chart-example.local
-      paths: 
-        - /
+    - host: wandb.fake.appcara.com.hk  # Replace with your actual domain
+      paths:
+        - path: /
+          pathType: Prefix
   tls: []
 
 autoscaling:
